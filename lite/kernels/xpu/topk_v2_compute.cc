@@ -54,7 +54,9 @@ void TopkV2Compute::Run() {
                             indices_int32_device,
                             m,
                             n,
-                            k);
+                            k,
+                            true,
+                            true);
   CHECK_EQ(r, 0);
 
   r = xdnn::cast_v2<int, int64_t>(
